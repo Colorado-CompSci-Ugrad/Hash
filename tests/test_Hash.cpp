@@ -60,7 +60,7 @@ protected:
 };
 
 double test_Hash::total_grade = 0;
-double test_Hash::max_grade = 174.1;
+double test_Hash::max_grade = 166.1;
 
 /////////////////////////////////////////
 // here are some helper functions for tests
@@ -308,18 +308,15 @@ TEST_F(test_Hash, Resize){
 
   // these two just establish a baseline
   ASSERT_EQ(tbl->capacity,16);
-  add_points_to_grade(1);
-
   ASSERT_EQ(tbl->size,10);
-  add_points_to_grade(1);
 
   // Now resize the table by doubling the capacity
   myhash.Resize(tbl, tbl->capacity * 2);
   ASSERT_EQ(tbl->capacity,32); // capacity should double
-  add_points_to_grade(1);
+  // add_points_to_grade(1);
 
   ASSERT_EQ(tbl->size,10); // but number of items should stay same
-  add_points_to_grade(1);
+  // add_points_to_grade(1);
 
   // Now remove four items, then resize back to 16
   myhash.Remove(tbl, keys[2]);
@@ -327,15 +324,15 @@ TEST_F(test_Hash, Resize){
   myhash.Remove(tbl, keys[6]);
   myhash.Remove(tbl, keys[8]);
   ASSERT_EQ(tbl->capacity,32);
-  add_points_to_grade(1);
+  // add_points_to_grade(1);
 
   ASSERT_EQ(tbl->size,6);
-  add_points_to_grade(1);
+  // add_points_to_grade(1);
 
   myhash.Resize(tbl, tbl->capacity / 2);
   ASSERT_EQ(tbl->capacity,16);
-  add_points_to_grade(1);
+  // add_points_to_grade(1);
 
   ASSERT_EQ(tbl->size,6);
-  add_points_to_grade(1);
+  // add_points_to_grade(1);
 }
