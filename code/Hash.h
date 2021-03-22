@@ -164,8 +164,6 @@ public:
   // provided new capacity, rehashes the existing backing array into the
   // new array. on exit, the hash table's fields and functions
   // accurately reflect the hash table's current state.
-  //
-  // this is an extra-credit function.
   void Resize(shared_ptr<hash_table> tbl, unsigned int new_capacity);
 
   // PrintTable is a debugging function. It is implemented for you.
